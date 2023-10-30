@@ -34,16 +34,16 @@ const Services = () => {
           {services.map((service) => (
             <div
               key={service._id}
-              className="flex flex-row p-4 border-b border-white"
+              className="flex flex-col p-4 border-b border-white md:flex-row"
             >
-              <div className="w-1/3">
+              <div className="w-full md:w-1/3">
                 <img
                   src={service.imageUrl}
                   alt={service.name}
-                  className="object-contain rounded-l h-[400px] w-full md:mt-0 mt-32"
+                  className="object-cover rounded-l h-[400px] w-full md:object-contain md:mt-0 mt-32"
                 />
               </div>
-              <div className="w-2/3 p-4 ml-4 flex flex-col justify-between space-y-4">
+              <div className="w-full p-4 ml-4 flex flex-col justify-between space-y-4 md:w-2/3">
                 <div>
                   <h2 className="text-xl font-bold mt-2 text-white text-center">
                     {service.name}
