@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.addBlur {
+  backdrop-filter: blur(2px);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #fbf5f2;
+  margin: 4em 0.3em 0.3em 0;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #fbf5f2;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  color: #000000;
+  background-color: #fbf5f2;
+}
+
+.active {
+  background-color: #d2b2a3;
+  color: #54433a;
+  transition-timing-function: ease-in;
+}
+
+html {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 10, 10, 1) 0%,
+    rgba(40, 40, 40, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-origin: border-box;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  margin: 0;
+  padding: 0;
+}

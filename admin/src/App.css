@@ -1,0 +1,15 @@
+.table-responsive {
+  display: block;
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Optional: Add some custom styling for smaller screens */
+@media (max-width: 640px) {
+  .table-responsive th,
+  .table-responsive td {
+    white-space: normal !important;
+  }
+}
