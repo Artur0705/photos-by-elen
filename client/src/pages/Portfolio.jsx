@@ -5,6 +5,7 @@ import Layout from "../components/Layout";
 
 import Gallery from "../components/Gallery";
 import Select from "react-select";
+import { Result, Spin } from "antd";
 
 const customStyles = {
   control: (provided) => ({
@@ -41,7 +42,10 @@ const customStyles = {
 
 const Portfolio = () => {
   const dispatch = useDispatch();
-  const { portfolios } = useSelector((state) => state?.portfolio);
+  const { portfolios, isLoading, isError } = useSelector(
+    (state) => state?.portfolio
+  );
+
   const [selectedCategory, setSelectedCategory] = useState("");
   const [filteredPortfolios, setFilteredPortfolios] = useState(portfolios);
 
@@ -72,6 +76,16 @@ const Portfolio = () => {
 
   return (
     <Layout>
+      {isLoading && (
+        <div className="flex justify-center items-center min-h-screen">
+          <Spin size="large" />
+        </div>
+      )}
+      {isError && (
+        <div className="flex justify-center items-center min-h-screen">
+          <Result status="401" subTitle="Error loading services." />
+        </div>
+      )}
       <div className="px-4 py-8 md:mt-10 mt-0">
         <div className="max-w-md mx-auto mb-10">
           <Select

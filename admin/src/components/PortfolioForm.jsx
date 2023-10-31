@@ -21,6 +21,7 @@ const PortfolioForm = ({ portfolioItem, onClose }) => {
     }
   );
   const [errors, setErrors] = useState({});
+  const [isUploading, setIsUploading] = useState(false);
 
   useEffect(() => {
     if (imageUrl) {
@@ -46,14 +47,17 @@ const PortfolioForm = ({ portfolioItem, onClose }) => {
   const handleFileChange = (e) => {
     const file = e.target.files[0];
     if (file) {
+      setIsUploading(true);
       const formData = new FormData();
       formData.append("file", file);
       dispatch(uploadImage(formData))
         .then((response) => {
           console.log("Image upload response:", response);
+          setIsUploading(false);
         })
         .catch((error) => {
           console.error("Image upload error:", error);
+          setIsUploading(false);
         });
     }
   };
@@ -164,6 +168,7 @@ const PortfolioForm = ({ portfolioItem, onClose }) => {
         <button
           type="submit"
           className="bg-indigo-600 text-white py-2 px-4 rounded"
+          disabled={isUploading}
         >
           {portfolioItem ? "Update" : "Create"}
         </button>

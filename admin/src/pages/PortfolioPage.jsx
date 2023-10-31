@@ -90,7 +90,7 @@ const PortfolioPage = () => {
                   disabled={isLoading}
                 >
                   Edit
-                </button>{" "}
+                </button>
                 <Popconfirm
                   title="Are you sure you want to delete this portfolio?"
                   onConfirm={() => handleDelete(portfolio._id)}
