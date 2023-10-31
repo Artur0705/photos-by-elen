@@ -5,6 +5,7 @@ import Services from "./pages/Services";
 import Portfolio from "./pages/Portfolio";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
+import TermsAndConditions from "./pages/TermsAndConditions ";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/faq" element={<FAQ />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditions />} />
       </Routes>
     </Router>
   );

@@ -13,7 +13,13 @@ const Footer = () => {
           &copy; {currentYear} Photos by Elen. All rights reserved.
         </div>
 
-        <div className="flex flex-row justify-center mb-2">
+        <div className="flex flex-row justify-center mb-2 space-x-4">
+          <Link
+            to="/terms-and-conditions"
+            className="text-zinc-400 hover:text-zinc-300"
+          >
+            T&C's &nbsp; |
+          </Link>
           <Link
             to="https://www.instagram.com/elensnkhchyanphoto/?hl=en"
             className="flex items-center gap-2 text-zinc-400 hover:text-zinc-300"
